@@ -5,7 +5,13 @@ import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import BraiHeader from '../header'
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  images: string[];
+}
+
+const projects: Project[] = [
   {
     title: "Automatización de Procesos Bancarios",
     description: "Implementamos un sistema de IA que redujo el tiempo de procesamiento de préstamos en un 75%.",
@@ -62,7 +68,7 @@ export default function Brai3DPortfolioSliders() {
   )
 }
 
-function ProjectSlider({ project }) {
+function ProjectSlider({ project }: { project: Project }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextSlide = () => {
