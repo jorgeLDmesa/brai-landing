@@ -132,7 +132,7 @@ export default function BraiLandingPage() {
 
         <footer className="py-8 border-t border-gray-800">
           <div className="container mx-auto px-4 text-center text-gray-500">
-            © 2023 Brai. Todos los derechos reservados.
+            2023 Brai. Todos los derechos reservados.
           </div>
         </footer>
       </div>
@@ -144,6 +144,13 @@ interface ServiceCardProps {
   title: string;
   items: string[];
   icon: React.ReactNode;
+  description?: string
+}
+
+interface BenefitCardProps {
+  title: string
+  description: string
+  icon: React.ReactNode
 }
 
 function ServiceCard({ title, items, icon }: ServiceCardProps) {
@@ -163,7 +170,7 @@ function ServiceCard({ title, items, icon }: ServiceCardProps) {
   )
 }
 
-function BenefitCard({ title, description, icon }: ServiceCardProps) {
+function BenefitCard({ title, description, icon }: BenefitCardProps) {
   return (
     <div className="flex items-start">
       <div className="mr-8 text-gray-300">{icon}</div>
